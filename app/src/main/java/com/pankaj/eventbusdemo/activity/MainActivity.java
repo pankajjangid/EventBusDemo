@@ -32,6 +32,9 @@ public class MainActivity extends AppCompatActivity {
     @Subscribe()
     public void onEvent(SendEvent event) {
         Log.d(TAG, "onEvent: " + event.getMessage());
+        // FragmentTwo fragmentTwo =       new FragmentTwo();
+        //getSupportFragmentManager().beginTransaction().replace(R.id.container1,fragmentTwo).commit();
+        // fragmentTwo.setData(event );
     }
 
 }

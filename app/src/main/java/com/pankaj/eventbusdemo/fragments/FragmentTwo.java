@@ -3,6 +3,7 @@ package com.pankaj.eventbusdemo.fragments;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -26,6 +27,7 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
     Button btnSend;
     EditText etVal;
 
+    String msg = "";
     public FragmentTwo() {
         // Required empty public constructor
     }
@@ -51,15 +53,22 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
 
 
     @Override
+    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
+        super.onActivityCreated(savedInstanceState);
+        etVal.setText(msg);
+
+    }
+
+    @Override
     public void onClick(View v) {
 
         switch (v.getId()) {
 
             case R.id.btnSend:
-                SendEvent sendEvent = new SendEvent(etVal.getText().toString());
+                SendEvent.FragmentTwoToOne fragmentTwoToOne = new SendEvent.FragmentTwoToOne(etVal.getText().toString());
                 // Post the event
 
-                EventBus.getDefault().post(sendEvent);
+                EventBus.getDefault().post(fragmentTwoToOne);
 
                 break;
         }
@@ -68,7 +77,13 @@ public class FragmentTwo extends Fragment implements View.OnClickListener {
     @Subscribe
     public void onFragmentOnClick(SendEvent sendEvent) {
 
-        etVal.setText(sendEvent.getMessage());
+        msg = sendEvent.getMessage();
+        etVal.setText(msg);
+
     }
 
+    public void setData(SendEvent event) {
+        msg = event.getMessage();
+
+    }
 }

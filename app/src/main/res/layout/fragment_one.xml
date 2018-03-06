@@ -6,18 +6,27 @@
     android:padding="10dp"
     tools:context="com.pankaj.eventbusdemo.fragments.FragmentOne">
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:text="Fragment One"
+        android:textSize="18sp"
+        android:textStyle="bold" />
 
     <EditText
         android:id="@+id/etVal"
         android:layout_width="match_parent"
         android:layout_height="45dp"
+        android:layout_marginTop="20dp"
         android:hint="Enter Value" />
 
     <Button
+
         android:id="@+id/btnSend"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:text="Click Me" />
 </LinearLayout>

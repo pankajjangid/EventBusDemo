@@ -15,4 +15,17 @@ public class SendEvent {
     public String getMessage() {
         return message;
     }
+
+    public static class FragmentTwoToOne {
+
+        public String msg;
+
+        public FragmentTwoToOne(String msg) {
+            this.msg = msg;
+        }
+
+        public String getMsg() {
+            return msg;
+        }
+    }
 }

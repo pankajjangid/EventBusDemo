@@ -14,6 +14,7 @@ import com.pankaj.eventbusdemo.R;
 import com.pankaj.eventbusdemo.SendEvent;
 
 import org.greenrobot.eventbus.EventBus;
+import org.greenrobot.eventbus.Subscribe;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -41,6 +42,7 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
 
     private void findControls() {
         mContext = getActivity();
+        EventBus.getDefault().register(this);
         btnSend = mainView.findViewById(R.id.btnSend);
         etVal = mainView.findViewById(R.id.etVal);
 
@@ -62,4 +64,11 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
                 break;
         }
     }
+
+    @Subscribe
+    public void onEventFromBus(SendEvent.FragmentTwoToOne twoToOne) {
+
+        etVal.setText(twoToOne.getMsg());
+    }
+
 }
