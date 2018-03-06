@@ -67,7 +67,6 @@ public class FragmentOne extends Fragment implements View.OnClickListener {
 
     @Subscribe
     public void onEventFromBus(SendEvent.FragmentTwoToOne twoToOne) {
-
         etVal.setText(twoToOne.getMsg());
     }
 
