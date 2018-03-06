@@ -1,0 +1,23 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="10dp"
+    tools:context="com.pankaj.eventbusdemo.fragments.FragmentOne">
+
+
+    <EditText
+        android:id="@+id/etVal"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:hint="Enter Value" />
+
+    <Button
+        android:id="@+id/btnSend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:text="Click Me" />
+</LinearLayout>
