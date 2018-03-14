@@ -1,5 +1,7 @@
 package com.pankaj.eventbusdemo.networking;
 
+import com.jakewharton.retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory;
+
 import java.util.concurrent.TimeUnit;
 
 import okhttp3.OkHttpClient;
@@ -17,7 +19,7 @@ public class ApiClient {
     public static Retrofit retrofit2 = null;
 
     //============================LIVE URL====================================
-    public static String BASE_URL = "http://aryan123-001-site8.ctempurl.com/api/";
+    public static String BASE_URL = "https://ipvigilante.com/";
 
 
     private static String NEW_BASE_URL = "";
@@ -38,6 +40,7 @@ public class ApiClient {
             retrofit = new Retrofit.Builder().baseUrl(BASE_URL)
                     .client(client)
                     .addConverterFactory(GsonConverterFactory.create())
+                    .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                     .build();
         }
 
