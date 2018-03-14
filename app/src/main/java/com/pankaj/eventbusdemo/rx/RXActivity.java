@@ -17,6 +17,7 @@ import io.reactivex.schedulers.Schedulers;
 public class RXActivity extends AppCompatActivity {
 
     private static final String TAG = "RXActivity";
+
     Observable<Integer> mObservable = Observable.just(1, 2, 3, 4, 6)
             .delay(1, TimeUnit.SECONDS);
     Observer<Integer> mObserver = new Observer<Integer>() {
