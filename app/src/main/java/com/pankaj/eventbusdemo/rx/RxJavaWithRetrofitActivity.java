@@ -58,4 +58,6 @@ public class RxJavaWithRetrofitActivity extends AppCompatActivity {
 
 
     }
+
+    //Disposable disposable = new
 }
